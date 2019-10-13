@@ -123,7 +123,7 @@ class FSM {
      * @returns {Boolean}
      */
     redo() {
-        //console.log(this.und);
+        console.log(this.und);
         if (this.und.length<1){
             return false;
         }else{
