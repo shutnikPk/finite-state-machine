@@ -9,15 +9,9 @@ class FSM {
         }
         this.config = config;
         this.histo = [];
-<<<<<<< HEAD
         this.und = [];
         this.curr_state = this.config.initial;
         this.histo[0] = this.curr_state;
-=======
-        this.und =[];
-        this.curr_state = this.config.initial;
-        this.histo[0]=this.curr_state;
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
 
     }
 
@@ -39,11 +33,7 @@ class FSM {
         //this.histo.push(this.curr_state);
         this.curr_state = state;
         this.histo.push(this.curr_state);
-<<<<<<< HEAD
         this.und = [];
-=======
-        this.und =[];
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
         return this;
     }
 
@@ -58,7 +48,6 @@ class FSM {
 
             this.changeState(state_event);
             //this.curr_state = state_event;
-<<<<<<< HEAD
             // this.histo.push(this.curr_state); 
            // console.log('trigger', '  ', this.curr_state);
             this.und = [];
@@ -66,15 +55,6 @@ class FSM {
         } else {
             throw new Error;
         } return this;
-=======
-           // this.histo.push(this.curr_state); 
-           console.log('trigger','  ',this.curr_state);          
-            this.und =[];
-            // this.histo.push(this.curr_state); 
-        } else {
-            throw new Error;
-        }return this;
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
 
     }
 
@@ -84,15 +64,9 @@ class FSM {
     reset() {
         this.histo.push(this.config.initial);
         this.curr_state = this.config.initial;
-<<<<<<< HEAD
        // console.log('reset', '_____', this.histo);
         return this;
 
-=======
-        console.log('reset','_____',this.histo);
-        return this;
-        
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
     }
 
     /**
@@ -115,11 +89,6 @@ class FSM {
                     arr.push(state.toString());
                 }
             }
-<<<<<<< HEAD
-            // console.log(arr);
-=======
-           // console.log(arr);
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
             return arr;
 
         }
@@ -133,7 +102,7 @@ class FSM {
      * @returns {Boolean}
      */
     undo() {
-<<<<<<< HEAD
+
 
         if (this.histo.length < 2) {
             this.histo.pop();
@@ -144,16 +113,7 @@ class FSM {
             this.histo.pop();
             this.curr_state = this.histo[this.histo.length - 1];
 
-=======
-        
-        if (this.histo.length <2) {this.histo.pop(); 
-            return false;
-        } else {console.log('undo2', '+++',this.curr_state);console.log('undo2', '__',this.histo);
-            this.und.push( this.curr_state);
-            this.histo.pop();
-            this.curr_state=this.histo[this.histo.length-1];      
-               
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
+
             return true;
         }
     }
@@ -178,14 +138,9 @@ class FSM {
      * Clears transition history
      */
     clearHistory() {
-<<<<<<< HEAD
+
         this.histo=[]
-=======
-        if(){
-            
-        }
->>>>>>> 01eee9e60045b74091aa0ab37d93d0f8aff505af
-    }
+
 }
 
 module.exports = FSM;
